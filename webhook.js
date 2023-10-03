@@ -24,7 +24,7 @@ app.post('/update', (req, res) =>
     }
 
     // Выполнение команды git pull для обновления репозитория
-    exec('cd /var/www/dima/data/www/rant.dimius.ru# && git pull', (error, stdout) =>
+    exec('cd /var/www/dima/data/www/rant.dimius.ru && git pull', (error, stdout) =>
     {
         if (error) {
             console.error(`Ошибка при обновлении: ${error.message}`);
