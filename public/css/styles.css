@@ -57,6 +57,10 @@ footer {
         max-width: 100%;
         border-radius: 0.2em;
     }
+    .post video {
+        max-width: 100%;
+        border-radius: 0.2em;
+    }
 
 hr {
     height: 1px;
