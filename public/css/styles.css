@@ -80,10 +80,16 @@ hr {
 }
 ul {
     margin-top: 0.5em;
+    padding-left: 1.33em;
 }
-ul > li {
-    margin-bottom: 0.5em;
-}
+    ul > li {
+        margin-bottom: 0.5em;
+    }
+    ul > li::marker {
+        content: "- "; /* Use any content (e.g., a character or an image) for your custom marker */
+        font-size: 1.2em; /* Adjust the size of the marker */
+        margin-right: 10px; /* Add space between the marker and the list item */
+    }
 h1 {
     font-size: 2em;
     margin-bottom: 0.5em;
