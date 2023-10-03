@@ -7,7 +7,7 @@ const postsPerPage = 5;
 const posts = loadPosts();
 
 app.set('view engine', 'ejs');
-app.use(express.static('public'));
+app.use('/public', express.static('public'));
 
 app.get('/', (req, res) => {
 	const totalPages = Math.ceil(posts.length / postsPerPage);
