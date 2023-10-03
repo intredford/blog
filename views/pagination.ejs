@@ -1,0 +1,17 @@
+<!-- views/pagination.ejs -->
+<hr>
+<div class="pagination">
+    <span>Страницы:</span>
+    <% for (let i = 0; i < pageNumbers.length; i++) { %>
+        <div class="pagination-page">
+            <% if (pageNumbers[i] === page) { %>
+                <span class="active"><%= pageNumbers[i] %></span>
+            <% } else if (pageNumbers[i] === pageNumbers.length) { %>
+                <a href="/"><%= pageNumbers[i] %></a>
+            <% } else { %>
+                <a href="?page=<%= pageNumbers[i] %>"><%= pageNumbers[i] %></a>
+            <% } %>
+        </div>
+    <% } %>
+</div>
+<hr>

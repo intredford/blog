@@ -8,19 +8,20 @@
     <link rel="stylesheet" href="/public/font/IBM_Plex_Sans/styles.css">
     <title>Дима / разглагольствования</title>
 </head>
+<body>
     <header>
         <% const imgNumber = Math.floor(Math.random() * 21) + 1; %>
         <img id = "logo" src="/public/logo/logo-<%= imgNumber %>-min.png" height="120px">
     </header>
-    <hr>
     <main>
+        <%- include('pagination', { page, pageNumbers }) %>
         <%- include('index') %>
+        <%- include('pagination', { page, pageNumbers }) %>
     </main>
-    <hr>
     <footer>
         <div>
             <input type="checkbox" id="darkModeCheckbox">
-            <label for = "darkModeCheckbox">Тёмная тема</label>
+            <label for="darkModeCheckbox">Тёмная тема</label>
         </div>
         <p>© 2003 — 3023 Дима. Все права поражены.</p>    
         <p>Политика транцендентальности&nbsp;&nbsp; О вас</p>
