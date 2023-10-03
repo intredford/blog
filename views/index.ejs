@@ -1,0 +1,24 @@
+<!-- views/index.ejs -->
+<section>
+	<% for (let i = 0; i < posts.length; i++) { %>  
+		<article class="post">
+			<%- posts[i].html %>
+			<small class="post-date"><%= posts[i].date %></small> <!-- Добавляем вывод даты -->
+		</article>
+	<% } %>
+</section>
+
+<div class="pagination">
+	<% if (pageNumbers.length > 1) { %>
+		<span>Страницы:</span>
+		<% for (let i = 0; i < pageNumbers.length; i++) { %>
+			<% if (pageNumbers[i] === page) { %>
+				<span class="active"><%= pageNumbers[i] %></span>
+			<% } else { %>
+				<a href="?page=<%= pageNumbers[i] %>"><%= pageNumbers[i] %></a>
+			<% } %>
+		<% } %>
+	<% } %>
+</div>
+
+<script src = "/js/wrap-images.js"></script>
