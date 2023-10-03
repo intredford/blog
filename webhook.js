@@ -1,6 +1,7 @@
 import express from 'express';
 import { exec } from 'child_process';
 import dotenv from 'dotenv';
+import crypto from 'crypto';
 
 dotenv.config(); // Загрузка переменных окружения из файла .env
 
