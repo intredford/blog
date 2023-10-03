@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/font/IBM_Plex_Sans/styles.css">
+    <link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="stylesheet" href="/public/font/IBM_Plex_Sans/styles.css">
     <title>Дима / разглагольствования</title>
 </head>
     <header>
         <% const imgNumber = Math.floor(Math.random() * 21) + 1; %>
-        <img id = "logo" src="/logo/logo-<%= imgNumber %>-min.png" height="120px">
+        <img id = "logo" src="/public/logo/logo-<%= imgNumber %>-min.png" height="120px">
     </header>
     <hr>
     <main>
@@ -31,9 +31,9 @@
 // поменять лого
 const logoImage = document.getElementById("logo");
 logoImage.addEventListener("click", () => {
-    logoImage.src = `/logo/logo-${Math.floor(Math.random() * 21) + 1}-min.png`;
+    logoImage.src = `/public/logo/logo-${Math.floor(Math.random() * 21) + 1}-min.png`;
 });
 </script>
 
-<script src = "/js/dark-mode.js"></script>
+<script src = "/public/js/dark-mode.js"></script>
 </html>

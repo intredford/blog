@@ -1,5 +1,5 @@
 # Управление местом
 
-![](/post-img/not-enough-space-firefox.jpg)
+![](/public/post-img/not-enough-space-firefox.jpg)
 
 Вот бы здесь было достаточно места, чтобы показать больше вкладок...
