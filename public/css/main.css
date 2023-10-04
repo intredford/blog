@@ -1,0 +1,90 @@
+/* Общие стили для страницы */
+body {
+    padding: 0.25em 1em;
+    max-width: 652px;
+    margin: 0 auto;
+    font-family: 'IBM Plex Sans', 'Inter', sans-serif;
+    line-height: 1.4;
+    font-size: 1rem;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1,"liga" 1,"calt" 1;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Стили для списков */
+ul {
+    margin-top: 0.5em;
+    padding-left: 1.33em;
+}
+    ul > li {
+        margin-bottom: 0.5em;
+    }
+    ul > li::marker {
+        content: "- ";
+        font-size: 1.2em;
+        margin-right: 10px;
+    }
+
+/* Стили для заголовков */
+h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+h2 {
+    font-size: 1.4em;
+    margin-bottom: 0.4em;
+}
+
+/* Стили для элементов формы */
+input[type="checkbox"] {
+    margin-left: 0;
+}
+button {
+    background-color: #eee;
+    border: 1px solid #e1e1e1;
+    border-radius: 0.2em;
+    padding: 0.2em 0.5em;
+    font-family: inherit;
+}
+    button:hover {
+        background-color: #e6e6e6;
+        border: 1px solid #ccc;
+    }
+
+/* Стили для текстовых полей */
+input:not([type="checkbox"]):not([type="radio"]) {
+    border: 1px solid #e1e1e1;
+    padding: 0.2em 0.6em;
+    border-radius: 0.2em;
+    font-family: inherit;
+}
+
+/* Стили для кода */
+code {
+    display: inline-block;
+    padding: 0 0.25em;
+    margin: 0 2px;
+    outline: 1px solid #e4e4e4;
+    font-family: monospace;
+    font-size: 1.02em;
+    border-radius: 3px;
+    white-space: nowrap;
+    border-radius: 0.2em;
+}
+
+/* Стили для горизонтальной линии */
+hr {
+    height: 1px;
+    border: none;
+    background-color: lightgray;
+    opacity: 0.66;
+}
+
+@media screen and (max-width: 962px) {
+    body {
+        font-size: 0.95rem;
+    }
+}

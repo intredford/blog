@@ -1,0 +1,19 @@
+.dark-mode *,
+body.dark-mode {
+    background-color: black;
+    color: black;
+    border-color: transparent !important;
+}
+.dark-mode img,
+.dark-mode video {
+    opacity: 0;
+}
+.dark-mode label {
+    color: white;
+}
+.dark-mode code {
+    outline-color: transparent;
+}
+.dark-mode button {
+    opacity: 0;
+}
