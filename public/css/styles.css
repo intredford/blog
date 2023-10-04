@@ -147,3 +147,15 @@ code {
         font-size: 0.95rem;
     }
 }
+
+@media screen and (max-width: 480px) {
+    .search {
+        width: 33.33%;
+    }
+    .search input {
+        width: 100%;
+    }
+    .search button {
+        display: none;
+    }
+}
