@@ -1,11 +1,35 @@
 // posts.js
 import fs from 'fs';
 import markdownIt from 'markdown-it';
+import { projectPath } from './path.js';
+import path from 'path'
+import pkg from 'image-size';
+const { imageSize } = pkg;
 
 const md = markdownIt({ 
     html: true,
     // typographer: true,
     // quotes: '«»„“'
+}).use((md) => {
+    md.renderer.rules.image = (tokens, idx, options, env, self) => {
+        function getImageSize(src) {
+            const size = imageSize(path.join(projectPath(import.meta.url), src));
+            return { width: size.width, height: size.height };
+        }
+
+        const token = tokens[idx];
+        const src = token.attrs[token.attrIndex('src')][1];
+        const width = token.attrs.find(attr => attr[0] === 'width');
+        const height = token.attrs.find(attr => attr[0] === 'height');
+
+        if (src && !width && !height) {
+            const { width: imgWidth, height: imgHeight } = getImageSize(src);
+            token.attrPush(['width', imgWidth]);
+            token.attrPush(['height', imgHeight]);
+        }
+
+        return self.renderToken(tokens, idx, options);
+    };
 });
 
 const postsDirectory = './posts'
