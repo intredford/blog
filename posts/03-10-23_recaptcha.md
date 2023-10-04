@@ -6,4 +6,4 @@
 
 Можно, конечно, сказать, что они столкнулись с каким-то техническим ограничением и сделали как сделали. Ну, типа, это же веб. НО! Самое смешное, что когда плитка выбрана, клик на ней работает нормально...
 
-<video src = "/public/post-img/recaptcha.mp4" loop muted controls ></video>
+<video src = "/public/post-img/recaptcha.mp4" loop muted controls width = "384" height = "386"></video>
