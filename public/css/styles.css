@@ -65,10 +65,13 @@ footer {
 
 
 .pagination-page {
-    margin: 0 0.5em;
+    margin: 0 0.1em;
     display: inline;
     cursor: default;
 }
+    .pagination-page > * {
+        padding: 0 0.4em;
+    }
     .pagination-page .active {
         font-weight: bold;
         cursor: default;
