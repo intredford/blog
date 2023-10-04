@@ -2,16 +2,24 @@
 <hr>
 <div class="pagination">
     <span>Страницы:</span>
-    <% for (let i = 0; i < pageNumbers.length; i++) { %>
+    <% pageNumbers.forEach(function(pageNumber) { %>
         <div class="pagination-page">
-            <% if (pageNumbers[i] === page) { %>
-                <span class="active"><%= pageNumbers[i] %></span>
-            <% } else if (pageNumbers[i] === pageNumbers.length) { %>
-                <a href="/"><%= pageNumbers[i] %></a>
+            <% if (pageNumber === page) { %>
+                <span class="active"><%= pageNumber %></span>
             <% } else { %>
-                <a href="?page=<%= pageNumbers[i] %>"><%= pageNumbers[i] %></a>
+                <a href="<%=
+                    (pageNumber !== pageNumbers.length) ? 
+                        (query) ?
+                            `/search?q=${query}&page=${pageNumber}`
+                            : `?page=${pageNumber}`
+                        : (query) ?
+                            `/search?q=${query}`
+                            : '/'
+                %>">
+                    <%= pageNumber %>
+                </a>
             <% } %>
         </div>
-    <% } %>
+    <% }) %>
 </div>
 <hr>

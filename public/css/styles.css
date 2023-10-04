@@ -28,6 +28,7 @@ body.dark-mode {
 
 header {
     padding: 1.25em 0;
+    position: relative;
 }
 footer {
     padding-top: 1rem;
@@ -62,6 +63,7 @@ footer {
         border-radius: 0.2em;
     }
 
+
 .pagination-page {
     margin: 0 0.5em;
     display: inline;
@@ -71,6 +73,13 @@ footer {
         font-weight: bold;
         cursor: default;
     }
+
+.search {
+    width: fit-content;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 1em)
+}
 
 hr {
     height: 1px;
@@ -100,6 +109,23 @@ h2 {
 }
 input[type="checkbox"] {
     margin-left: 0;
+}
+button {
+    background-color: #eee;
+    border: 1px solid #e1e1e1;
+    border-radius: 0.2em;
+    padding: 0.2em 0.5em;
+    font-family: inherit;
+}
+    button:hover {
+        background-color: #e6e6e6;
+        border: 1px solid #ccc;
+    }
+input:not([type="checkbox"]):not([type="radio"]) {
+    border: 1px solid #e1e1e1;
+    padding: 0.2em 0.6em;
+    border-radius: 0.2em;
+    font-family: inherit;
 }
 code {
     display: inline-block;

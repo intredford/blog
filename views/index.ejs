@@ -1,10 +1,14 @@
 <!-- views/index.ejs -->
 <section>
-	<% for (let i = 0; i < posts.length; i++) { %>  
-		<article class="post">
-			<%- posts[i].html %>
-			<small class="post-date"><%= posts[i].date %></small> <!-- Добавляем вывод даты -->
-		</article>
+	<% if (posts.length) { %>
+		<% for (let i = 0; i < posts.length; i++) { %>  
+			<article class="post">
+				<%- posts[i].html %>
+				<small class="post-date"><%= posts[i].date %></small> <!-- Добавляем вывод даты -->
+			</article>
+		<% } %>
+	<% } else { %>
+		<p><i>По запросу «<%- query %>» ничего не найдено.</i></p>
 	<% } %>
 </section>
 

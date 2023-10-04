@@ -11,7 +11,20 @@
 <body>
     <header>
         <% const imgNumber = Math.floor(Math.random() * 21) + 1; %>
-        <img id = "logo" src="/public/logo/logo-<%= imgNumber %>-min.png" height="120px">
+
+        <% if (req.path === '/') { %>
+            <img id="logo" src="/public/logo/logo-<%= imgNumber %>-min.png" height="120px">
+        <% } else { %>
+            <a href="/">
+                <img src="/public/logo/logo-<%= imgNumber %>-min.png" height="120px">
+            </a>
+        <% } %>
+
+        <form action="/search" method="get" class = "search">
+            <input type="search" name="q" placeholder="Поиск..." value="<%= query %>">
+            <button type="submit"style="filter: grayscale()">🔍</button>
+        </form>
+
     </header>
     <main>
         <%- include('pagination', { page, pageNumbers }) %>
