@@ -6,10 +6,23 @@ import path from 'path'
 import pkg from 'image-size';
 const { imageSize } = pkg;
 
+import hljs from 'highlight.js/lib/core';
+import css from 'highlight.js/lib/languages/css';
+hljs.registerLanguage('css', css);
+
 const md = markdownIt({ 
     html: true,
-    // typographer: true,
-    // quotes: '«»„“'
+    highlight: function (str, lang) {
+        if (lang && hljs.getLanguage(lang)) {
+          try {
+            return hljs.highlight(str, { language: lang, ignoreIllegals: true }).value;
+          } catch (err) {
+            console.error(err)
+          }
+        }
+    
+        return ''; // use external default escaping
+    }
 }).use((md) => {
     md.renderer.rules.image = (tokens, idx, options, env, self) => {
         function getImageSize(src) {
