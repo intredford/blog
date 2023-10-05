@@ -73,7 +73,7 @@ code {
     white-space: nowrap;
     border-radius: 0.2em;
     max-width: 100%;
-    overflow-x: auto;
+    scrollbar-width: thin;
 }
 code[class] {
     white-space: unset;
@@ -81,6 +81,9 @@ code[class] {
     width: 100%;
     background-color: #00000008;
     font-size: 0.8em;
+    overflow-x: auto;
+}
+pre > code {
     overflow-x: auto;
 }
 
