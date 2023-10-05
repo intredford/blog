@@ -66,13 +66,19 @@ input:not([type="checkbox"]):not([type="radio"]) {
 code {
     display: inline-block;
     padding: 0 0.25em;
-    margin: 0 2px;
-    outline: 1px solid #e4e4e4;
+    background-color: #0000000a;
     font-family: monospace;
     font-size: 1.02em;
     border-radius: 3px;
     white-space: nowrap;
     border-radius: 0.2em;
+}
+code[class] {
+    white-space: unset;
+    padding: 1em;
+    width: 100%;
+    background-color: #00000008;
+    font-size: 0.8em;
 }
 
 /* Стили для горизонтальной линии */
