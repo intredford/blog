@@ -72,6 +72,8 @@ code {
     border-radius: 3px;
     white-space: nowrap;
     border-radius: 0.2em;
+    max-width: 100%;
+    overflow-x: auto;
 }
 code[class] {
     white-space: unset;
