@@ -74,6 +74,7 @@ export function loadPosts() {
             const { date, formattedDate } = getFormattedDate(dateStr)
 
             return { 
+                markdown,
 				html,
 				date: formattedDate, 
 				unixTime: date.getTime() // по-дурацки немного :)

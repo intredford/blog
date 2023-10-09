@@ -34,7 +34,11 @@ app.get('/search', (req, res) => {
 	let result = [];
 
 	if (query) {
-		result = posts.filter((post) => post.html.toLowerCase().includes(query.toLowerCase())).map((post) => {
+		result = posts.filter((post) => {
+			const text = post.markdown.replace(/<[^>]*>/g, "").toLowerCase();
+			console.log(text)
+			return text.includes(query.toLowerCase())
+		}).map((post) => {
 			// выделяем совпадения тегом <mark>
 			const markedHtml = post.html.replace(new RegExp(query, 'gi'), (match) => `<mark>${match}</mark>`);
 			return { ...post, html: markedHtml };
