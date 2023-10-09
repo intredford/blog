@@ -8,8 +8,8 @@ body.dark-mode {
 .dark-mode video {
     opacity: 0;
 }
-.dark-mode label {
-    color: white;
+.dark-mode label[for="darkModeCheckbox"] {
+    color: white !important;
 }
 .dark-mode code {
     outline-color: transparent;
