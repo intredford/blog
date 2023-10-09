@@ -11,19 +11,19 @@ form#joke > button { width: fit-content; padding: 0.5em 1.5em; margin-top: 1em; 
 <form id = "joke">
     <div>
         <label for = "email">Электронная почта</label>
-        <input type = "email" id = "email">
+        <input type = "email" id = "email" required>
     </div>
     <div>
         <label for = "tel">Номер телефона</label>
-        <input type = "tel" id = "tel">
+        <input type = "tel" id = "tel" required>
     </div>
     <div>
         <label for = "date">Дата рождения</label>
-        <input type = "date" id = "date">
+        <input type = "date" id = "date" required>
     </div>
     <div>
         <label for = "password">Пароль</label>
-        <input type = "password" id = "password">
+        <input type = "password" id = "password" required>
     </div>
     <div>
         <input type = "checkbox" id = "remember"> 
@@ -32,6 +32,10 @@ form#joke > button { width: fit-content; padding: 0.5em 1.5em; margin-top: 1em; 
     <div>
         <input type = "checkbox" id = "news"> 
         <label for = "news" class = "inline">Получать рассылку</label>
+    </div>
+    <div>
+        <input type = "checkbox" id = "rules"> 
+        <label for = "rules" class = "inline">Я согласен с условиями пользования</label>
     </div>
     <button type = "submit">Войти</button>
 </form>
