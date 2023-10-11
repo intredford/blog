@@ -57,6 +57,11 @@ button, select {
     select > option {
         font-size: 0.95em;
     }
+    button:active,
+    select:active {
+        background-color: #dfdfdf;
+        border: 1px solid #bebebe;
+    }
 
 /* Стили для текстовых полей */
 input:not([type="checkbox"]):not([type="radio"]) {
