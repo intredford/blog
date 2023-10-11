@@ -42,16 +42,20 @@ h2 {
 input[type="checkbox"] {
     margin-left: 0;
 }
-button {
+button, select {
     background-color: #eee;
     border: 1px solid #e1e1e1;
     border-radius: 0.2em;
     padding: 0.2em 0.5em;
     font-family: inherit;
 }
-    button:hover {
+    button:hover,
+    select:hover {
         background-color: #e6e6e6;
         border: 1px solid #ccc;
+    }
+    select > option {
+        font-size: 0.95em;
     }
 
 /* Стили для текстовых полей */
