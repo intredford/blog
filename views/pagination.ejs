@@ -4,20 +4,20 @@
 <hr>
 <div class="pagination">
     <span>Страницы:</span>
-    <% pageNumbers.forEach(function(pageNumber) { %>
+    <% pageNumbers.forEach(number => { %>
         <div class="pagination-page">
-            <% if (pageNumber === page) { %>
-                <span class="active"><%= pageNumber %></span>
+            <% if (number === page) { %>
+                <span class="active"><%= number %></span>
             <% } else { %>
                 <a href="<%=
-                    (pageNumber !== pageNumbers.length) ? 
+                    (number !== pageNumbers.length) ? 
                         (query) ?
-                            `/search?q=${query}&page=${pageNumber}`
-                            : `?page=${pageNumber}`
+                            `/search?q=${query}&page=${number}`
+                            : `?page=${number}`
                         : (query) ?
                             `/search?q=${query}`
                             : '/'
-                %>"><%= pageNumber %></a>
+                %>"><%= number %></a>
             <% } %>
         </div>
     <% }) %>
