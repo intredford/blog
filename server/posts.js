@@ -27,20 +27,19 @@ const md = markdownIt({
     }
 }).use((md) => {
     md.renderer.rules.image = (tokens, idx, options, env, self) => {
-        function getImageSize(src) {
+        const getImageSize = (src) => {
             const size = imageSize(path.join(projectPath(import.meta.url), src));
             return { width: size.width, height: size.height };
-        }
+        };
 
         const token = tokens[idx];
-        const src = token.attrs[token.attrIndex('src')][1];
-        const width = token.attrs.find(attr => attr[0] === 'width');
-        const height = token.attrs.find(attr => attr[0] === 'height');
+        const src = token.attrs.find(attr => attr[0] === 'src')[1];
+        const [width, height] = token.attrs.filter(attr => attr[0] === 'width' || attr[0] === 'height');
 
         if (src && !width && !height) {
             const { width: imgWidth, height: imgHeight } = getImageSize(src);
-            token.attrPush(['width', imgWidth]);
-            token.attrPush(['height', imgHeight]);
+            token.attrs.push(['width', imgWidth]);
+            token.attrs.push(['height', imgHeight]);
         }
 
         return self.renderToken(tokens, idx, options);
