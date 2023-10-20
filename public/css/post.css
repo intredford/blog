@@ -4,9 +4,12 @@
     .post:last-child {
         margin-bottom: 1.2em;
     }
-    .post-date {
+    .post-footer {
         opacity: 0.66;
     }
+        .post-footer a {
+            color: inherit;
+        }
     .post img {
         cursor: pointer;
         max-width: 100%;
