@@ -108,4 +108,7 @@ hr {
     body {
         font-size: 0.95rem;
     }
+    h1 {
+        font-size: 1.8em;
+    }
 }
