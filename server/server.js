@@ -53,6 +53,22 @@ app.get('/search', (req, res) => {
 	res.render('layout', { posts: pagePosts, page, pageNumbers, totalPages, query, req });
 });
 
+app.get('/post/:name', (req, res) => {
+	const post = posts.find(post => post.name === req.params.name);
+
+	console.log(post)
+
+	res.render('layout', { 
+		posts: [ post ],
+		req,
+		page: 1,
+		pageNumbers: [ 1 ],
+		totalPages: 1,
+		query: ''
+	});
+})
+
+
 app.listen(port, () => {
 	console.log(`Blog server is running on port ${port}`);
 });

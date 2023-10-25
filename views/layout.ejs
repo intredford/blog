@@ -22,10 +22,10 @@
         <% const imgNumber = Math.floor(Math.random() * 22) + 1; %>
 
         <% if (req.path === '/') { %>
-            <img id="logo" src="/public/logo/logo-<%= imgNumber %>-min.png" height="120">
+            <img id="logo" src="/public/logo/logo-<%= imgNumber %>-min.png" height="120" alt = "Дима">
         <% } else { %>
             <a href="/">
-                <img src="/public/logo/logo-<%= imgNumber %>-min.png" height="120">
+                <img src="/public/logo/logo-<%= imgNumber %>-min.png" height="120" alt = "Дима">
             </a>
         <% } %>
 

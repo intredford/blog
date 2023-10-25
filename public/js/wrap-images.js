@@ -4,6 +4,7 @@ postImages.forEach(image => {
 	const parentLink = document.createElement('a');
 	parentLink.href = image.src;
 	parentLink.target = '_blank';
+	parentLink.style.display = 'inline-block';
 	image.parentNode.replaceChild(parentLink, image);
 	parentLink.appendChild(image);
 });

@@ -71,12 +71,14 @@ export function loadPosts() {
         .map(postFile => {
             const markdown = fs.readFileSync(`${postsDirectory}/${postFile}`, 'utf8');
             const html = md.render(markdown); // md -> html
+            const name = postFile.split('_')[1].split('.')[0];
             const dateStr = postFile.split('_')[0];
             const { date, formattedDate } = getFormattedDate(dateStr)
 
             return { 
                 markdown,
 				html,
+                name,
 				date: formattedDate, 
 				unixTime: date.getTime() // по-дурацки немного :)
 			};
