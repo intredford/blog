@@ -16,7 +16,7 @@ header {
     width: fit-content;
     position: absolute;
     right: 0;
-    top: calc(100% + 1em)
+    top: calc(100% + 1em - 1px)
 }
 
 footer {
