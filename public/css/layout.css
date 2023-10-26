@@ -6,7 +6,7 @@ header {
 #logo {
     max-height: 120px;
     max-width: 100%;
-    /* height: auto; */
+    height: auto;
 }
     #logo::selection {
         background-color: transparent;
