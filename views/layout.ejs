@@ -19,7 +19,7 @@
 </head>
 <body>
     <header>
-        <% const imgNumber = Math.floor(Math.random() * 22) + 1; %>
+        <% const imgNumber = Math.floor(Math.random() * 25) + 1; %>
 
         <% if (req.path === '/') { %>
             <img id="logo" src="/public/logo/logo-<%= imgNumber %>-min.png" height="120" alt = "Дима">
@@ -54,7 +54,7 @@
 // поменять лого
 const logoImage = document.getElementById("logo");
 logoImage.addEventListener("click", () => {
-    logoImage.src = `/public/logo/logo-${Math.floor(Math.random() * 22) + 1}-min.png`;
+    logoImage.src = `/public/logo/logo-${Math.floor(Math.random() * 25) + 1}-min.png`;
 });
 </script>
 
