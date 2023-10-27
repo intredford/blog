@@ -61,7 +61,8 @@ function getFormattedDate(dateStr) {
         day: 'numeric',
         month: 'long',
         year: 'numeric',
-    });
+    }).slice(0, -3); // Вырезаем " г."
+
 
 	return { date, formattedDate }
 }
