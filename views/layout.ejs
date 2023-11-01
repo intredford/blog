@@ -19,7 +19,8 @@
 </head>
 <body>
     <header>
-        <% const imgNumber = Math.floor(Math.random() * 25) + 1; %>
+        <% const imgNumber = 25 %>
+        <!-- TODO: Начальный логотип в зависимости от дня месяца -->
 
         <% if (req.path === '/' && !Object.keys(req.query).length) { %>
             <img id="logo" src="/public/logo/logo-<%= imgNumber %>-min.png" height="120" alt = "Дима">
