@@ -21,7 +21,7 @@
     <header>
         <% const imgNumber = Math.floor(Math.random() * 25) + 1; %>
 
-        <% if (req.path === '/') { %>
+        <% if (req.path === '/' && !Object.keys(req.query).length) { %>
             <img id="logo" src="/public/logo/logo-<%= imgNumber %>-min.png" height="120" alt = "Дима">
         <% } else { %>
             <a href="/">
