@@ -42,7 +42,7 @@
         <%- include('pagination', { page, pageNumbers }) %>
     </main>
     <footer>
-        <div>
+        <div class = "dark-mode-control">
             <input type="checkbox" id="darkModeCheckbox">
             <label for="darkModeCheckbox">Тёмная тема</label>
         </div>
@@ -50,6 +50,14 @@
         <p>Политика транцендентальности&nbsp;&nbsp; О вас</p>
     </footer>
 </body>
+
+<noscript>
+    <style>
+        .dark-mode-control {
+            display: none;
+        }
+    </style>
+</noscript>
 
 <script>
 // поменять лого
