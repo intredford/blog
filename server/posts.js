@@ -56,13 +56,13 @@ function parseDate(dateStr) {
 
 export function loadPosts() {
     return fs.readdirSync(postsDirectory) // прочитать посты
-        .map(postFile => {
-            const markdown = fs.readFileSync(`${postsDirectory}/${postFile}`, 'utf8');
+        .map(postFilename => {
+            const markdown = fs.readFileSync(`${postsDirectory}/${postFilename}`, 'utf8');
             const html = md.render(markdown); // md -> html
 
-            const name = postFile.split('_')[1].split('.')[0];
+            const name = postFilename.split('_')[1].split('.')[0];
             
-            const date = parseDate(postFile.split('_')[0]);
+            const date = parseDate(postFilename.split('_')[0]);
 
             return { 
                 markdown,
