@@ -54,35 +54,22 @@ function parseDate(dateStr) {
     return new Date(2000 + year, month - 1, day);
 }
 
-// Форматирует дату к виду, который показывается в постах: 29 сентября 2023
-function getFormattedDate(dateStr) {
-    const date = parseDate(dateStr);
-    const formattedDate = date.toLocaleString('ru-RU', {
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric',
-    }).slice(0, -3); // Вырезаем " г."
-
-
-	return { date, formattedDate }
-}
-
 export function loadPosts() {
     return fs.readdirSync(postsDirectory) // прочитать посты
         .map(postFile => {
             const markdown = fs.readFileSync(`${postsDirectory}/${postFile}`, 'utf8');
             const html = md.render(markdown); // md -> html
+
             const name = postFile.split('_')[1].split('.')[0];
-            const dateStr = postFile.split('_')[0];
-            const { date, formattedDate } = getFormattedDate(dateStr)
+            
+            const date = parseDate(postFile.split('_')[0]);
 
             return { 
                 markdown,
 				html,
                 name,
-				date: formattedDate, 
-				unixTime: date.getTime() // по-дурацки немного :)
+				date: date,
 			};
         })
-        .sort((a, b) => b.unixTime - a.unixTime); // От новых к старым
+        .sort((a, b) => b.date.getTime() - a.date.getTime()); // От новых к старым
 }

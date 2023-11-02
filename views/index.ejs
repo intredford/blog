@@ -1,13 +1,25 @@
 <!-- views/index.ejs -->
 <link rel = "stylesheet" href = "/public/css/post.css">
 
+<%
+function formatDate(date) {
+    const formatted = date.toLocaleString('ru-RU', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+    }).slice(0, -3); // Вырезаем " г."
+
+	return formatted
+}
+%>
+
 <section>
 	<% if (posts.length) { %>
 		<% for (const post of posts) { %>  
 			<article class="post">
 				<%- post.html %>
 				<small class="post-footer">
-					<%= post.date %> 
+					<%= formatDate(post.date) %> 
 					// <a href = "/post/<%= post.name %>">Указатель</a>
 				</small>
 			</article>
