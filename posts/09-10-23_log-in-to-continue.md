@@ -30,8 +30,8 @@ form#joke > button { width: fit-content; padding: 0.5em 1.5em; margin-top: 1em; 
         <label for = "remember" class = "inline">Запомнить меня</label>
     </div>
     <div>
-        <input type = "checkbox" id = "news"> 
-        <label for = "news" class = "inline">Получать рассылку</label>
+        <input type = "checkbox" id = "spam" checked> 
+        <label for = "spam" class = "inline">Получать рассылку</label>
     </div>
     <div>
         <input type = "checkbox" id = "rules"> 
