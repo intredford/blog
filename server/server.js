@@ -1,5 +1,6 @@
 import express from 'express';
 import { loadPosts } from './posts.js';
+import getMeta from './utils/get-meta.js'
 
 const app = express();
 const port = 3000;
@@ -18,13 +19,21 @@ const postsPerPage = 5;
 const posts = loadPosts();
 const pages = chunkPosts(posts, postsPerPage).reverse();
 
+const defaultTitle = 'Дима / разглагольствования'
+const defaultDescription = 'Блог'
+
 app.get('/', (req, res) => {
 	const totalPages = Math.ceil(posts.length / postsPerPage);
 	const page = parseInt(req.query.page) || totalPages;
 	const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1).reverse();
 	const pagePosts = pages[page - 1];
 
-	res.render('layout', { posts: pagePosts, page, pageNumbers, totalPages, query: null, req });
+	const meta = {
+		title: defaultTitle,
+		description: defaultDescription
+	}
+
+	res.render('layout', { posts: pagePosts, page, pageNumbers, totalPages, query: null, req, meta });
 });
 
 app.get('/search', (req, res) => {
@@ -50,13 +59,22 @@ app.get('/search', (req, res) => {
 	const pageNumbers = Array.from({ length: totalPages > 0 ? totalPages : 1 }, (_, index) => index + 1).reverse();
 	const pagePosts = result.length ? chunkPosts(result, postsPerPage).reverse()[page - 1] : [];
 
-	res.render('layout', { posts: pagePosts, page, pageNumbers, totalPages, query, req });
+	const meta = {
+		title: `"${query}" @ ${defaultTitle}`,
+		description: `Поиск по запросу "${query}"`
+	}
+
+	res.render('layout', { posts: pagePosts, page, pageNumbers, totalPages, query, req, meta });
 });
 
 app.get('/post/:name', (req, res) => {
 	const post = posts.find(post => post.name === req.params.name);
 
-	console.log(post)
+	const { title, description } = getMeta(post.markdown)
+	const meta = {
+		title: `${title} @ ${defaultTitle}`,
+		description
+	}
 
 	res.render('layout', { 
 		posts: [ post ],
@@ -64,7 +82,8 @@ app.get('/post/:name', (req, res) => {
 		page: 1,
 		pageNumbers: [ 1 ],
 		totalPages: 1,
-		query: ''
+		query: '',
+		meta
 	});
 })
 
