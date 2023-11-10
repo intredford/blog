@@ -11,7 +11,7 @@ const { imageSize } = pkg;
 
 import hljs from 'highlight.js/lib/core';
 import css from 'highlight.js/lib/languages/css';
-import js from 'highlight.js/lib/languages/javascript.js';
+import js from 'highlight.js/lib/languages/javascript';
 hljs.registerLanguage('css', css);
 hljs.registerLanguage('xml', js); // ????
 
