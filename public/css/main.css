@@ -73,6 +73,7 @@ input:not([type="checkbox"]):not([type="radio"]) {
     padding: 0.2em 0.6em;
     border-radius: 0.2em;
     font-family: inherit;
+    line-height: inherit;
 }
 
 /* Стили для кода */
