@@ -50,6 +50,7 @@ button, select {
     padding: 0.2em 0.5em;
     font-family: inherit;
     box-shadow: 0 1px 0 rgba(20,20,20,0.04);
+    line-height: inherit;
 }
     button:hover,
     select:hover {
