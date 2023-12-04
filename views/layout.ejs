@@ -30,10 +30,12 @@
             </a>
         <% } %>
 
-        <form action="/search" method="get" class = "search">
-            <input type="search" name="q" placeholder="Поиск..." value="<%= query %>">
-            <button type="submit"style="filter: grayscale()">🔍</button>
-        </form>
+        <search>
+            <form action="/search" method="get" class = "search">
+                <input type="search" name="q" placeholder="Поиск..." value="<%= query %>">
+                <button type="submit"style="filter: grayscale()">🔍</button>
+            </form>
+        </search>
 
     </header>
     <main>
