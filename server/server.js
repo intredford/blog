@@ -45,7 +45,6 @@ app.get('/search', (req, res) => {
 	if (query) {
 		result = posts.filter((post) => {
 			const text = post.markdown.replace(/<[^>]*>/g, "").toLowerCase();
-			console.log(text)
 			return text.includes(query.toLowerCase())
 		}).map((post) => {
 			// выделяем совпадения тегом <mark>
