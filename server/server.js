@@ -69,21 +69,48 @@ app.get('/search', (req, res) => {
 app.get('/post/:name', (req, res) => {
 	const post = posts.find(post => post.name === req.params.name);
 
-	const { title } = getMeta(post.markdown)
-	const meta = {
-		title: `${title} @ ${defaultTitle}`,
-		description: ''
+	if (post) {
+		const { title } = getMeta(post.markdown)
+		const meta = {
+			title: `${title} @ ${defaultTitle}`,
+			description: ''
+		}
+
+		res.render('layout', { 
+			posts: [ post ],
+			req,
+			page: 1,
+			pageNumbers: [ 1 ],
+			totalPages: 1,
+			query: '',
+			meta
+		});
+	} else {
+		res.status(404).send(
+`<!DOCTYPE html>
+<head><title>404 @ ${defaultTitle}</title></head>
+<pre>
+<b>404 / Не найдено</b>
+
+Пост "${req.url}" не неписан или был удалён.
+Связаться можно по mail@dimius.ru
+
+<a href = "/">На главную</a>
+
+---
+
+<b>404 / Not Found</b>
+
+The post "${req.url}" has not been written yet or has been moved/deleted.
+You can contact us at mail@dimius.ru
+
+<a href="/">Go to Homepage</a>
+</pre>
+<style>pre{line-height:1.4;white-space:break-spaces;}</style>`
+		)
 	}
 
-	res.render('layout', { 
-		posts: [ post ],
-		req,
-		page: 1,
-		pageNumbers: [ 1 ],
-		totalPages: 1,
-		query: '',
-		meta
-	});
+
 })
 
 
