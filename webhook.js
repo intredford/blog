@@ -24,7 +24,7 @@ app.post('/update', (req, res) =>
     }
 
     // Выполнение команды git pull для обновления репозитория
-    exec('source ~/.bashrc && cd /var/www/dima/data/www/rant.dimius.ru && git pull && npm install && pm2 restart --silent blog ', (error, stdout) =>
+    exec('git pull && npm install && pm2 restart --silent blog ', (error, stdout) =>
     {
         if (error) {
             console.error(`Ошибка при обновлении: ${error.message}`);
