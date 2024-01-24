@@ -4,22 +4,26 @@
 <hr>
 <div class="pagination">
     <span>Страницы:</span>
-    <% pageNumbers.forEach(number => { %>
-        <div class="pagination-page">
-            <% if (number === page) { %>
-                <span class="active"><%= number %></span>
-            <% } else { %>
-                <a href="<%=
-                    (number !== pageNumbers.length) ? 
-                        (query) ?
-                            `/search?q=${query}&page=${number}`
-                            : `?page=${number}`
-                        : (query) ?
-                            `/search?q=${query}`
-                            : '/'
-                %>"><%= number %></a>
-            <% } %>
-        </div>
-    <% }) %>
+
+    <div class = "pagination-list">
+        <% pageNumbers.forEach(number => { %>
+            <span class="pagination-page">
+                <% if (number === page) { %>
+                    <span class="active"><%= number %></span>
+                <% } else { %>
+                    <a href="<%=
+                        (number !== pageNumbers.length) ? 
+                            (query) ?
+                                `/search?q=${query}&page=${number}`
+                                : `?page=${number}`
+                            : (query) ?
+                                `/search?q=${query}`
+                                : '/'
+                    %>"><%= number %></a>
+                <% } %>
+            </span>
+        <% }) %>
+    </div>
+    
 </div>
 <hr>
