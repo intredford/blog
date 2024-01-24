@@ -9,9 +9,20 @@ app.set('view engine', 'ejs');
 app.use('/public', express.static('public'));
 
 const chunkPosts = (posts, perPage) => {
+	// На странице с новыми постами perPage + остаток, на остальных perPage
+	const remainder = posts.length % perPage;
+	const firstPagePostCount = perPage + remainder;
+	const pages = Math.floor(posts.length / perPage);
+	
 	return Array.from(
-		{ length: Math.ceil(posts.length / perPage) },
-		(_, i) => posts.slice(i * perPage, (i + 1) * perPage)
+		{ length: pages },
+		(_, i) => {
+			if (i === 0) {
+				return posts.slice(i, i + firstPagePostCount)
+			} else {
+				return posts.slice(firstPagePostCount + (i - 1) * perPage, firstPagePostCount + i * perPage)
+			}
+		}
 	);
 };
 
@@ -23,7 +34,7 @@ const defaultTitle = 'Дима / разглагольствования'
 const defaultDescription = 'Блог'
 
 app.get('/', (req, res) => {
-	const totalPages = Math.ceil(posts.length / postsPerPage);
+	const totalPages = pages.length;
 	const page = parseInt(req.query.page) || totalPages;
 	const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1).reverse();
 	const pagePosts = pages[page - 1];
