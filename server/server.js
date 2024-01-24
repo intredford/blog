@@ -69,10 +69,10 @@ app.get('/search', (req, res) => {
 app.get('/post/:name', (req, res) => {
 	const post = posts.find(post => post.name === req.params.name);
 
-	const { title, description } = getMeta(post.markdown)
+	const { title } = getMeta(post.markdown)
 	const meta = {
 		title: `${title} @ ${defaultTitle}`,
-		description
+		description: ''
 	}
 
 	res.render('layout', { 
