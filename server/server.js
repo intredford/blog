@@ -9,6 +9,9 @@ app.set('view engine', 'ejs');
 app.use('/public', express.static('public'));
 
 const chunkPosts = (posts, perPage) => {
+
+	if (posts.length <= perPage) return [posts]
+
 	// На странице с новыми постами perPage + остаток, на остальных perPage
 	const remainder = posts.length % perPage;
 	const firstPagePostCount = perPage + remainder;
@@ -68,6 +71,8 @@ app.get('/search', (req, res) => {
 	const page = parseInt(req.query.page) || totalPages;
 	const pageNumbers = Array.from({ length: totalPages > 0 ? totalPages : 1 }, (_, index) => index + 1).reverse();
 	const pagePosts = result.length ? chunkPosts(result, postsPerPage).reverse()[page - 1] : [];
+	
+	console.log(result)
 
 	const meta = {
 		title: `"${query}" @ ${defaultTitle}`,
