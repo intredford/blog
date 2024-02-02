@@ -72,8 +72,6 @@ app.get('/search', (req, res) => {
 	const pageNumbers = Array.from({ length: totalPages > 0 ? totalPages : 1 }, (_, index) => index + 1).reverse();
 	const pagePosts = result.length ? chunkPosts(result, postsPerPage).reverse()[page - 1] : [];
 	
-	console.log(result)
-
 	const meta = {
 		title: `"${query}" @ ${defaultTitle}`,
 		description: `Поиск по запросу "${query}"`
