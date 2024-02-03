@@ -27,6 +27,7 @@ footer {
 @media screen and (max-width: 652px) {
     .search {
         width: 33.33%;
+        min-width: 110px;
     }
     .search input {
         width: 100%;
