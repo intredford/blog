@@ -98,6 +98,8 @@ code[class] {
     background-color: #00000008;
     font-size: 0.8em;
     overflow-x: auto;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 1px 0 rgba(20,20,20,0.05);
 }
 pre > code {
     overflow-x: auto;
