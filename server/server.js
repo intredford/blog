@@ -67,10 +67,11 @@ app.get('/search', (req, res) => {
 		});
 	}
 
-	const totalPages = Math.ceil(result.length / postsPerPage);
+	const chunkedResult = result.length ? chunkPosts(result, postsPerPage) : []
+	const totalPages = chunkedResult.length
+	const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1).reverse();
 	const page = parseInt(req.query.page) || totalPages;
-	const pageNumbers = Array.from({ length: totalPages > 0 ? totalPages : 1 }, (_, index) => index + 1).reverse();
-	const pagePosts = result.length ? chunkPosts(result, postsPerPage).reverse()[page - 1] : [];
+	const pagePosts = chunkedResult[page - 1];
 	
 	const meta = {
 		title: `"${query}" @ ${defaultTitle}`,
