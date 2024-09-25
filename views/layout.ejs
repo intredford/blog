@@ -23,7 +23,7 @@
         <!-- TODO: Начальный логотип в зависимости от дня месяца -->
 
         <% if (req.path === '/' && !Object.keys(req.query).length) { %>
-            <img id="logo" src="/public/logo/logo-<%= imgNumber %>-min.png" height="120" alt = "Дима">
+            <img id="logo" class = "logo-<%= imgNumber %>" src="/public/logo/logo-<%= imgNumber %>-min.png" height="120" alt = "Дима">
         <% } else { %>
             <a href="/">
                 <img src="/public/logo/logo-<%= imgNumber %>-min.png" height="120" alt = "Дима">
@@ -65,7 +65,9 @@
 // поменять лого
 const logoImage = document.getElementById("logo");
 logoImage.addEventListener("click", () => {
-    logoImage.src = `/public/logo/logo-${Math.floor(Math.random() * 25) + 1}-min.png`;
+    const number = Math.floor(Math.random() * 25) + 1
+    logoImage.src = `/public/logo/logo-${number}-min.png`;
+    logoImage.className = `logo-${number}`
 });
 </script>
 

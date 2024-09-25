@@ -11,6 +11,12 @@ header {
     #logo::selection {
         background-color: transparent;
     }
+    .logo-23,
+    .logo-24,
+    .logo-25 {
+        image-rendering: crisp-edges;
+        image-rendering: pixelated;
+    }
 
 .search {
     width: fit-content;
