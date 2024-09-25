@@ -10,6 +10,10 @@
         .post-footer a {
             color: inherit;
         }
+        .post-footer .future {
+            margin-top: -0.15rem;
+            display: block;
+        }
     .post img {
         cursor: pointer;
         max-width: 100%;
