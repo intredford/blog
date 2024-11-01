@@ -5,6 +5,9 @@ import getMeta from './utils/get-meta.js'
 const app = express();
 const port = 3000;
 
+import compression from 'express-compression';
+app.use(compression());
+
 app.set('view engine', 'ejs');
 app.use('/public', express.static('public'));
 
