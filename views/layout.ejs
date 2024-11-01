@@ -2,11 +2,18 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+	<% const imgNumber = 25 %>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description" content="<%= meta.description %>">
     <meta name="author" content="Дима">
+
+	<link rel="preload" as="font" type="font/ttf" crossorigin='anonymous' href="/public/font/IBM_Plex_Sans/hinted-subset-IBMPlexSans-Regular.ttf">
+	<link rel="preload" as="font" type="font/ttf" crossorigin='anonymous' href="/public/font/IBM_Plex_Sans/hinted-subset-IBMPlexSans-Bold.ttf">
+	<link rel="preload" as="font" type="font/woff2" crossorigin='anonymous' href="/public/font/Fira_Code/FiraCode-Regular.woff2">
+
+	<link rel="preload" as="image" href="/public/logo/logo-<%= imgNumber %>-min.png">
 
     <link rel="stylesheet" href="/public/font/IBM_Plex_Sans/styles.css">
     <link rel="stylesheet" href="/public/font/Fira_Code/styles.css">
@@ -19,9 +26,6 @@
 </head>
 <body>
     <header>
-        <% const imgNumber = 25 %>
-        <!-- TODO: Начальный логотип в зависимости от дня месяца -->
-
         <% if (req.path === '/' && !Object.keys(req.query).length) { %>
             <img id="logo" class = "logo-<%= imgNumber %>" src="/public/logo/logo-<%= imgNumber %>-min.png" height="120" alt = "Дима">
         <% } else { %>
