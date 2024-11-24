@@ -1,27 +1,27 @@
 <!-- views/pagination.ejs -->
-<link rel = "stylesheet" href = "/public/css/pagination.css">
-
 <hr>
 <div class="pagination">
     <span>Страницы:</span>
 
     <div class = "pagination-list">
         <% pageNumbers.forEach(number => { %>
-            <span class="pagination-page">
-                <% if (number === page) { %>
-                    <span class="active"><%= number %></span>
-                <% } else { %>
-                    <a href="<%=
-                        (number !== pageNumbers.length) ? 
-                            (query) ?
-                                `/search?q=${query}&page=${number}`
-                                : `?page=${number}`
-                            : (query) ?
-                                `/search?q=${query}`
-                                : '/'
-                    %>"><%= number %></a>
-                <% } %>
-            </span>
+			<% if (number === page) { %>
+				<span class="pagination-page active"><%= number %></span>
+			<% } else { %>
+				<a href="<%=
+					(number !== pageNumbers.length) ? 
+						(query) ?
+							`/search?q=${query}&page=${number}`
+							: `?page=${number}`
+						: (query) ?
+							`/search?q=${query}`
+							: '/'
+					%>"
+					class="pagination-page"
+				>
+					<%= number %>
+				</a>
+			<% } %>
         <% }) %>
     </div>
     
