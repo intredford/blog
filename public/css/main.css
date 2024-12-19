@@ -82,7 +82,7 @@ input:not([type="checkbox"]):not([type="radio"]) {
 code {
     display: inline-block;
     padding: 0 0.25em;
-    background-color: #0000000a;
+    background-color: #726e6e12;
     font-family: "Fira Code", monospace;
     font-size: 90%;
     border-radius: 3px;
@@ -95,10 +95,10 @@ code[class] {
     white-space: unset;
     padding: 1em;
     width: 100%;
-    background-color: #00000008;
+    background-color: #8585850f;
     font-size: 0.8em;
     overflow-x: auto;
-    border: 1px solid #eaeaea;
+    border: 1px solid #a8a8a83f;
     box-shadow: 0 1px 0 rgba(20,20,20,0.05);
 }
 pre > code {
@@ -120,4 +120,42 @@ hr {
     h1 {
         font-size: 1.8em;
     }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1d1d1d;
+        color: #ffffff;
+    }
+	button, select {
+        background-color: #111;
+		background-image: linear-gradient(#202020, #1b1b1b);
+        border-color: #363636;
+		color: inherit;
+    }
+		button:hover,
+		select:hover {
+			background-color: #000;
+			background-image: linear-gradient(#161616, #1b1b1b);
+			border-color: #363636;
+		}
+		button:active,
+		select:active {
+			background-color: #000;
+			background-image: linear-gradient(#161616, #080808);
+		}
+    input:not([type="checkbox"]):not([type="radio"]) {
+        background-color: #000000;
+        border-color: #363636;
+        color: #ffffff;
+    }
+    hr {
+        background-color: #444444;
+    }
+	a {
+		color: #5baaff;
+	}
+	a:visited {
+		color: #a25bff;
+	}
 }

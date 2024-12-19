@@ -27,13 +27,17 @@
 </head>
 <body>
     <header>
-        <% if (req.path === '/' && !Object.keys(req.query).length) { %>
-            <img id="logo" class = "logo-<%= imgNumber %>" src="/public/logo/logo-<%= imgNumber %>-min.png" height="120" alt = "Дима">
-        <% } else { %>
-            <a href="/">
-                <img src="/public/logo/logo-<%= imgNumber %>-min.png" height="120" alt = "Дима">
-            </a>
-        <% } %>
+		<picture>
+			<% if (req.path === '/' && !Object.keys(req.query).length) { %>
+				<source media="(prefers-color-scheme: dark)" srcset="/public/logo/logo-25-dark-min.png">
+				<img id="logo" class = "logo-<%= imgNumber %>" src="/public/logo/logo-<%= imgNumber %>-min.png" height="120" alt = "Дима">
+			<% } else { %>
+				<a href="/">
+					<source media="(prefers-color-scheme: dark)" srcset="/public/logo/logo-25-dark-min.png">
+					<img src="/public/logo/logo-<%= imgNumber %>-min.png" height="120" alt = "Дима">
+				</a>
+			<% } %>
+		</picture>
 
         <search>
             <form action="/search" method="get" class = "search">
@@ -68,12 +72,15 @@
 
 <script>
 // поменять лого
+const isDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
 const logoImage = document.getElementById("logo");
-logoImage.addEventListener("click", () => {
-    const number = Math.floor(Math.random() * 25) + 1
-    logoImage.src = `/public/logo/logo-${number}-min.png`;
-    logoImage.className = `logo-${number}`
-});
+if (!isDarkTheme) {
+	logoImage.addEventListener("click", () => {
+		const number = Math.floor(Math.random() * 25) + 1
+		logoImage.src = `/public/logo/logo-${number}-min.png`;
+		logoImage.className = `logo-${number}`
+	});
+}
 </script>
 
 <script src = "/public/js/dark-mode.js" defer></script>
