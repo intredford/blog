@@ -39,7 +39,7 @@ formatPrice`Стоит ${5000}, но я по-братски отдам за ${30
 ```js
 db.query(
   "INSERT INTO users (name, bio, age) VALUES (?, ?, ?)",
-  [ name, bio, 16 ]
+  [ name, bio, age ]
 )
 ```
 
@@ -52,7 +52,7 @@ db.query(
 ```js
 db.query`
   INSERT INTO users (name, avatar, bio)
-  VALUES ${name}, ${bio}, ${16}
+  VALUES ${name}, ${bio}, ${age}
 `
 ```
 
