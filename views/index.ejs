@@ -21,7 +21,7 @@ function formatDate(date) {
 				<%- post.html %>
 				<small class="post-footer">
 					<%= formatDate(post.date) %> 
-					// <a href = "/post/<%= post.name %>">Указатель</a>
+					<a href = "/post/<%= post.name %>" class = "post-link">Указатель</a>
 					<% if (post.date > now) { %>
 						<em class = "future">Пост из будущего!</em>
 					<% } %>
