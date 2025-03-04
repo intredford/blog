@@ -1,8 +1,3 @@
-header {
-    padding: 1.25em 0;
-    position: relative;
-}
-
 #logo {
     max-height: 120px;
     max-width: 100%;
@@ -18,27 +13,11 @@ header {
         image-rendering: pixelated;
     }
 
-.search {
-    width: fit-content;
-    position: absolute;
-    right: 0;
-    top: calc(100% + 1em - 1px)
-}
-
 footer {
     padding-top: 1rem;
     padding-bottom: 0.5rem;
 }
 
-@media screen and (max-width: 652px) {
-    .search {
-        width: 33.33%;
-        min-width: 110px;
-    }
-    .search input {
-        width: 100%;
-    }
-    .search button {
-        display: none;
-    }
-}
+/* @media screen and (max-width: 652px) {
+    
+} */

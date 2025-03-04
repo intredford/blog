@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="/public/font/Fira_Code/styles.css">
     <link rel="stylesheet" href="/public/css/main.css">
     <link rel="stylesheet" href="/public/css/layout.css">
-	<link rel="stylesheet" href="/public/css/pagination.css">
     <link rel="stylesheet" href="/public/css/dark-mode.css">
     <link rel="stylesheet" href="/public/css/hljs/alabaster.min.css">
     <link rel="icon" href="/public/favicon.png">
@@ -27,6 +26,7 @@
 </head>
 <body>
     <header>
+
 		<picture>
 			<% if (req.path === '/' && !Object.keys(req.query).length) { %>
 				<source media="(prefers-color-scheme: dark)" srcset="/public/logo/logo-25-dark-min.png">
@@ -39,18 +39,9 @@
 			<% } %>
 		</picture>
 
-        <search>
-            <form action="/search" method="get" class = "search">
-                <input type="search" name="q" placeholder="Поиск..." value="<%= query %>">
-                <button type="submit"style="filter: grayscale()">🔍</button>
-            </form>
-        </search>
-
     </header>
     <main>
-        <%- include('pagination', { page, pageNumbers }) %>
         <%- include('index') %>
-        <%- include('pagination', { page, pageNumbers }) %>
     </main>
     <footer>
         <div class = "dark-mode-control">
