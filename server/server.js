@@ -2,6 +2,8 @@ import express from 'express';
 import { loadPosts } from './posts.js';
 import getMeta from './utils/get-meta.js'
 
+import ejs from 'ejs';
+
 const app = express();
 const port = 3000;
 
@@ -16,14 +18,16 @@ const posts = loadPosts();
 const defaultTitle = 'Дима / разглагольствования'
 const defaultDescription = 'Блог'
 
-app.get('/', (req, res) => {
-	const meta = {
-		title: defaultTitle,
-		description: defaultDescription
-	}
+const meta = {
+	title: defaultTitle,
+	description: defaultDescription
+}
 
-	res.render('layout', { posts, req, meta });
-});
+const index = await ejs.renderFile('views/layout.ejs', { posts, index: true, meta });
+
+app.get('/', (req, res) => {
+	res.send(index)
+})
 
 app.get('/post/:name', (req, res) => {
 	const post = posts.find(post => post.name === req.params.name);
@@ -37,8 +41,8 @@ app.get('/post/:name', (req, res) => {
 
 		res.render('layout', { 
 			posts: [ post ],
+			index: false,
 			req,
-			query: '',
 			meta
 		});
 	} else {
