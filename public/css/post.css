@@ -14,6 +14,10 @@
             margin-top: -0.15rem;
             display: block;
         }
+	.post-link {
+		text-decoration-color: color-mix(in srgb, currentColor, transparent 70%);
+		margin-left: 0.5em;
+	}
     .post img {
         cursor: pointer;
         max-width: 100%;
