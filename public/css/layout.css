@@ -13,6 +13,10 @@
         image-rendering: pixelated;
     }
 
+header {
+	margin-top: 1.5em;
+}
+
 footer {
     padding-top: 1rem;
     padding-bottom: 0.5rem;
