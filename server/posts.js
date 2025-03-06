@@ -2,6 +2,7 @@
 import fs from 'fs';
 
 import markdownIt from 'markdown-it';
+import lazyLoading from 'markdown-it-image-lazy-loading';
 
 import { projectPath } from './path.js';
 import path from 'path'
@@ -48,6 +49,8 @@ const md = markdownIt({
         return self.renderToken(tokens, idx, options);
     };
 });
+
+md.use(lazyLoading)
 
 const postsDirectory = './posts'
 
