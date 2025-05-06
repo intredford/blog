@@ -4,6 +4,19 @@
     .post:last-child {
         margin-bottom: 1.2em;
     }
+
+	.post p:not(:last-of-type) {
+		margin-bottom: 0;
+	}
+	.post p:has(img),
+	.post p + pre,
+	.post p + table {
+		margin-top: 0.5em;
+	}
+	.post p + ul {
+		margin-top: 0;
+	}
+
     .post-footer {
         opacity: 0.66;
     }
