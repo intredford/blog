@@ -11,25 +11,21 @@ function formatDate(date) {
 
 	return formatted
 }
+const now = new Date()
 %>
 
 <section>
-	<% const now = new Date() %>
-	<% if (posts.length) { %>
-		<% for (const post of posts) { %>  
-			<article class="post">
-				<%- post.html %>
-				<small class="post-footer">
-					<%= formatDate(post.date) %> 
-					<a href = "/post/<%= post.name %>" class = "post-link">Указатель</a>
-					<% if (post.date > now) { %>
-						<em class = "future">Пост из будущего!</em>
-					<% } %>
-				</small>
-			</article>
-		<% } %>
-	<% } else { %>
-		<p><i>По запросу «<%- query %>» ничего не найдено.</i></p>
+	<% for (const post of posts) { %>  
+		<article class="post">
+			<%- post.html %>
+			<small class="post-footer">
+				<%= formatDate(post.date) %> 
+				<a href = "/post/<%= post.name %>" class = "post-link">Указатель</a>
+				<% if (post.date > now) { %>
+					<em class = "future">Пост из будущего!</em>
+				<% } %>
+			</small>
+		</article>
 	<% } %>
 </section>
 
