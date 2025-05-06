@@ -4,6 +4,8 @@
         url('hinted-subset-IBMPlexSans-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
+	ascent-override: 94.8%;
+	descent-override: 25%;
 }
 
 @font-face {
@@ -12,6 +14,8 @@
         url('hinted-subset-IBMPlexSans-ExtraLightItalic.ttf') format('truetype');
     font-weight: 200;
     font-style: italic;
+	ascent-override: 94.8%;
+	descent-override: 25%;
 }
 
 @font-face {
@@ -20,6 +24,8 @@
         url('hinted-subset-IBMPlexSans-BoldItalic.ttf') format('truetype');
     font-weight: bold;
     font-style: italic;
+	ascent-override: 94.8%;
+	descent-override: 25%;
 }
 
 @font-face {
@@ -28,6 +34,8 @@
         url('hinted-subset-IBMPlexSans-ExtraLight.ttf') format('truetype');
     font-weight: 200;
     font-style: normal;
+	ascent-override: 94.8%;
+	descent-override: 25%;
 }
 
 @font-face {
@@ -36,6 +44,8 @@
         url('hinted-subset-IBMPlexSans-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
+	ascent-override: 94.8%;
+	descent-override: 25%;
 }
 
 @font-face {
@@ -44,6 +54,8 @@
         url('hinted-subset-IBMPlexSans-Italic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
+	ascent-override: 94.8%;
+	descent-override: 25%;
 }
 
 @font-face {
@@ -52,6 +64,8 @@
         url('hinted-subset-IBMPlexSans-LightItalic.ttf') format('truetype');
     font-weight: 300;
     font-style: italic;
+	ascent-override: 94.8%;
+	descent-override: 25%;
 }
 
 @font-face {
@@ -60,6 +74,8 @@
         url('hinted-subset-IBMPlexSans-MediumItalic.ttf') format('truetype');
     font-weight: 500;
     font-style: italic;
+	ascent-override: 94.8%;
+	descent-override: 25%;
 }
 
 @font-face {
@@ -68,6 +84,8 @@
         url('hinted-subset-IBMPlexSans-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
+	ascent-override: 94.8%;
+	descent-override: 25%;
 }
 
 @font-face {
@@ -76,6 +94,8 @@
         url('hinted-subset-IBMPlexSans-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+	ascent-override: 94.8%;
+	descent-override: 25%;
 }
 
 @font-face {
@@ -84,6 +104,8 @@
         url('hinted-subset-IBMPlexSans-SemiBoldItalic.ttf') format('truetype');
     font-weight: 600;
     font-style: italic;
+	ascent-override: 94.8%;
+	descent-override: 25%;
 }
 
 @font-face {
@@ -92,6 +114,8 @@
         url('hinted-subset-IBMPlexSans-SemiBold.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
+	ascent-override: 94.8%;
+	descent-override: 25%;
 }
 
 @font-face {
@@ -100,6 +124,8 @@
         url('hinted-subset-IBMPlexSans-ThinItalic.ttf') format('truetype');
     font-weight: 100;
     font-style: italic;
+	ascent-override: 94.8%;
+	descent-override: 25%;
 }
 
 @font-face {
@@ -108,5 +134,7 @@
         url('hinted-subset-IBMPlexSans-Thin.ttf') format('truetype');
     font-weight: 100;
     font-style: normal;
+	ascent-override: 94.8%;
+	descent-override: 25%;
 }
 
