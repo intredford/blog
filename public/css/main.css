@@ -4,8 +4,8 @@ body {
     max-width: 652px;
     margin: 0 auto;
     font-family: 'IBM Plex Sans', 'Inter', sans-serif;
-    line-height: 1.4;
-    font-size: 1rem;
+    line-height: 1.35;
+    font-size: 18px;
     text-rendering: optimizeLegibility;
     font-feature-settings: "kern" 1,"liga" 1,"calt" 1;
 }
@@ -127,7 +127,7 @@ hr {
 
 @media screen and (max-width: 962px) {
     body {
-        font-size: 0.95rem;
+        font-size: 16px;
     }
     h1 {
         font-size: 1.8em;
