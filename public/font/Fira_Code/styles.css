@@ -4,6 +4,8 @@
         url('FiraCode-Light.woff2') format('woff2');
     font-weight: 300;
     font-style: normal;
+	ascent-override: 95.62%;
+	descent-override: 25%;
 }
 
 @font-face {
@@ -12,6 +14,8 @@
         url('FiraCode-Bold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
+	ascent-override: 95.62%;
+	descent-override: 25%;
 }
 
 @font-face {
@@ -20,6 +24,8 @@
         url('FiraCode-Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
+	ascent-override: 95.62%;
+	descent-override: 25%;
 }
 
 @font-face {
@@ -28,6 +34,8 @@
         url('FiraCode-SemiBold.woff2') format('woff2');
     font-weight: 600;
     font-style: normal;
+	ascent-override: 95.62%;
+	descent-override: 25%;
 }
 
 @font-face {
@@ -36,4 +44,6 @@
         url('FiraCode-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
+	ascent-override: 95.62%;
+	descent-override: 25%;
 }
